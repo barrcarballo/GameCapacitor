@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <h1>Welcome</h1>
+  <div id="main">
+    <h2>Games</h2>
+    <button id="btn-g1">game1</button>
+    <button id="btn-g2">game2</button>
+    <button id="btn-g3">game3</button>
+  </div>
+  <div id="profile" class="nodisp">
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname" name="nickname" required>
+        <br>
+        <button type="submit" id="savePreferences">Send</button>
+    </form>
+  </div>
+  <div id="g1" class="game nodisp">
+    <h2>Game 1</h2>
+    <p>this is game 1...</p>
+    <button id="btn-g1-back">Go back</button>
+  </div>
+  <div id="g2" class="game nodisp">
+    <h2>Game 2</h2>
+    <p>this is game 2...</p>
+    <button id="btn-g2-back">Go back</button>
+  </div>
+  <div id="g3" class="game nodisp">
+    <h2>Game 3</h2>
+    <p>this is game 3...</p>
+    <button id="btn-g3-back">Go back</button>
+  </div>
+
+  <script src="./js/script.js" type="module"></script>
+<!--  -->
+</body>
+</html>

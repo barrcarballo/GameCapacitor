@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: auto;
+  margin: 0;
+}
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+label {
+  font-weight: bold;
+  color: #333;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.nodisp{
+  display: none !important;
+}
+
+#g1{
+  background-color: red;
+  color: white;
+}
+#g2{
+  background-color: blue;
+  color: white;
+}
+#g3{
+  background-color: green;
+  color: white;
+}
