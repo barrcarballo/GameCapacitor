@@ -43,7 +43,7 @@ input[type="text"] {
 }
 #main, #profile, .game {
   padding: 0;
-  padding-top: env(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top); /*resuelve el notch de apple*/
   margin: 0;
   width: 100vw;
   height: 100vh;
