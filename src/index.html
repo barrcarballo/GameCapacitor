@@ -6,12 +6,18 @@
     <title>Game</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/stylesGame.css">
+    <link rel="preload" as="image" href="./assets/imgs/dice1.svg" />
+    <link rel="preload" as="image" href="./assets/imgs/dice2.svg" />
+    <link rel="preload" as="image" href="./assets/imgs/dice3.svg" />
+    <link rel="preload" as="image" href="./assets/imgs/dice4.svg" />
+    <link rel="preload" as="image" href="./assets/imgs/dice5.svg" />
+    <link rel="preload" as="image" href="./assets/imgs/dice6.svg" />
 </head>
 <body>
   <div id="main">
     <h1>Games</h1>
     <button id="btn-g1">TaTeTi</button>
-    <button id="btn-g2">game2</button>
+    <button id="btn-g2">Generala</button>
     <button id="btn-g3">game3</button>
   </div>
   <div id="profile" class="nodisp">
@@ -36,9 +42,30 @@
 
   </div>
   <div id="g2" class="game nodisp">
-    <h2>Generala</h2>
-    <p>this is game 2...</p>
     <button id="btn-g2-back">Go back</button>
+    <h2>Generala</h2>
+
+    <img id="d0" src="/src/assets/imgs/dice1.svg" class="nodisp">
+    <img id="d1" src="/src/assets/imgs/dice2.svg" class="nodisp">
+    <img id="d2" src="/src/assets/imgs/dice3.svg" class="nodisp">
+    <img id="d3" src="/src/assets/imgs/dice4.svg" class="nodisp">
+    <img id="d4" src="/src/assets/imgs/dice5.svg" class="nodisp">
+    <img id="d5" src="/src/assets/imgs/dice6.svg" class="nodisp">
+    <section id="contenedorGenerala">
+      <div class="dice d0"></div>
+      <div class="dice d1"></div>
+      <div class="dice d2"></div>
+      <div class="dice d3"></div>
+      <div class="dice d4"></div>
+    </section>
+    <div class="game-state">
+      Turno de jugador: <span id="generala-player"></span> 
+      Tirada:<span id="generala-jugadas"></span>
+    </div>
+    <button id="btnDados">Tirar dados</button>
+    <table id="score">
+      <tbody><tr></tr></tbody>
+    </table>
   </div>
   <div id="g3" class="game nodisp">
     <h2>Game 3</h2>

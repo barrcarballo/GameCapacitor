@@ -38,3 +38,25 @@
     background-color: rgb(194, 95, 255);
     color:white;
   }
+
+  #g2 #contenedorGenerala{
+    width: 80%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+#g2 #contenedorGenerala > div{
+    border: 2px solid black;
+    margin: auto;
+    width: 50px;
+    height: 50px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+

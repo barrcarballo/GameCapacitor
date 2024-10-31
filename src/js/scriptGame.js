@@ -25,11 +25,9 @@ document.addEventListener("DOMContentLoaded", function() { initGame() });
 
 function initGame() {
   turno.innerHTML = 'X';
-  console.log(turno)
   casillas = ["", "", "", "", "", "", "", "", ""];
   table();
   deshabilitarBoton();
-  console.log(casillas);
 }
 
 function deshabilitarBoton() {
