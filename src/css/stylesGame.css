@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: pink;
 }
 #g1 a{
     text-decoration: none;
@@ -42,9 +43,11 @@
 
   /* ESTILOS GENERALA */
 
-  #g2 #contenedorGenerala{
+  #g2{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -54,6 +57,8 @@
 
 
 #g2 .dice{
+  width: 50px;
+  height: 50px;
   display: inline-block;
   padding: 10px;
   margin: 20px;
@@ -75,7 +80,7 @@
 
 
 #g2 table {
-  width: 30%;
+  width: 25%;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 1em;
@@ -92,7 +97,7 @@
 }
 
 #g2 table th {
-  background-color: #4CAF50;
+  background-color: purple;
   color: #ffffff;
   text-transform: uppercase;
 }
