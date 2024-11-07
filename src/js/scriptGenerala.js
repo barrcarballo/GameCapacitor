@@ -6,7 +6,7 @@ let selectedDados;
 let dados;
 
 // Dados
-const DICE_SIZE = 100;
+const DICE_SIZE = 75;
 const DOT_RADIUS = 0.1 * DICE_SIZE;
 const AT_QUARTER = 0.25 * DICE_SIZE;
 const AT_HALF = 0.5 * DICE_SIZE;
@@ -211,12 +211,12 @@ const changePlayerTurn = () => {
     if (game.turn > game.players) {
       game.turn = 1;
       game.round++;
-      if(game.round == 11){
+      if(game.round == 12){
         gameOver();
       }
     }
     btnDados.removeAttribute("disabled");
-    drawDiceImages();
+    drawDices();
     drawState();
 }
 
@@ -248,13 +248,12 @@ const drawDot = (ctx, x, y) => {
 }
 
 const showDice = (contDiv, number) => {
-    contDiv.innerHTML = null;
-    let img = document.createElement("img"); 
-    img.setAttribute("src", `./assets/imgs/dice${number}.svg`); 
-    img.setAttribute("alt", `dice${number}`); 
-    img.setAttribute("width", DICE_SIZE); 
-    img.setAttribute("height", DICE_SIZE);
-    contDiv.appendChild(img);
+  contDiv.innerHTML = null;
+  let canvas = document.createElement("canvas");
+  canvas.setAttribute("width", "" + DICE_SIZE);
+  canvas.setAttribute("height", "" + DICE_SIZE);
+  drawDice(canvas, number);
+  contDiv.appendChild(canvas);
   };
   
 
