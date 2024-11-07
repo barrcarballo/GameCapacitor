@@ -1,3 +1,4 @@
+  /* ESTILOS TATETI */
 #g1{
     display: flex;
   justify-content: center;
@@ -38,6 +39,8 @@
     background-color: rgb(194, 95, 255);
     color:white;
   }
+
+  /* ESTILOS GENERALA */
 
   #g2 #contenedorGenerala{
     display: flex;
