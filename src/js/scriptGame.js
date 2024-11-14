@@ -57,19 +57,21 @@ function table() {
     }
   }
 
-function habilitarBoton() {
-  const reiniciar = document.getElementById("reiniciar");
-  reiniciar.setAttribute("href", "javascript:tirarMoneda();");
-  reiniciar.classList.remove("disable");
-  contador = 0;
-}
-
-
-function tirarMoneda() {
-  h2.innerHTML = `Turno de: <span id='turnojugador'>${Math.random() > 0.5 ? 'X' : 'O'}</span>`;
-  turno = document.getElementById("turnojugador");
-  initGame();
-}
+  function habilitarBoton() {
+    const reiniciar = document.getElementById("reiniciar");
+    reiniciar.classList.remove("disable");
+    reiniciar.classList.add("reiniciar");
+    contador = 0;
+    
+    reiniciar.addEventListener("click", () => {
+      tirarMoneda();
+    });
+  }
+  
+  function tirarMoneda() {
+    h2.innerHTML = `Turno de: <span id="turnojugador">${Math.random() > 0.5 ? 'X' : 'O'}</span>`;
+  }
+  
 
 //Return te va a devolver el argumento que le asignes.
 

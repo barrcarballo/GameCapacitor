@@ -2,8 +2,10 @@ const min = 1;
 const max = 6;
 const section = document.getElementById("contenedorGenerala");
 const btnDados = document.getElementById("btnDados");
+const btnGoBack = document.getElementById("btn-g2-back");
 let selectedDados;
 let dados;
+
 
 // Dados
 const DICE_SIZE = 75;
@@ -29,9 +31,10 @@ const game = {
 };
 
 function initGame() {
+  btnGoBack.disabled = true; // Deshabilita el botón
   game.dices = [0, 0, 0, 0, 0];
   game.selectedDices = [false, false, false, false, false];
-  game.moves = 1;
+  game.moves = 0;
   game.turn = 1;
   for (let i = 0; i < game.players; i++) {
     game.scores.push([" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", 0]);
@@ -142,12 +145,17 @@ const drawScores = () => {
   // Limpiar el body de la tabla antes de agregar filas
   contGames.innerHTML = "";
 
-  // Juegos
+  // Tachar juegos
   for(let i = 0; i < 11; i++){
     const contGame = document.createElement("tr");
     const cellGameName = document.createElement("th");
     cellGameName.innerHTML = getGameName(i);
     contGame.appendChild(cellGameName);
+
+    for (let p = 0; p < game.players; p++) {
+      const cellPlayerScore = document.createElement("td");
+      cellPlayerScore.innerHTML = game.scores[p][i];}
+
 
     for(let p = 0; p < game.players; p++){
       const cellPlayerScore = document.createElement("td");
@@ -160,14 +168,44 @@ const drawScores = () => {
         return;
       }
       if(game.scores[game.turn - 1][i] !== " "){
-        alert(`Ya se anoto el juego ${getGameName(i)}`);
+        showModal(`Ya se anoto el juego ${getGameName(i)}`, () => {
+          console.log("Modal cerrado.");
+        });
         return;
-      }else{
+      } else{
         const score = gameScore(i);
-        game.scores[game.turn - 1][i] = score === 0 ? "X" : score;
-        game.scores[game.turn - 1][11] += score;
+        
+        if (
+          i === 9 &&
+          !isGameMatch(reGenerala) &&
+          game.scores[game.turn - 1][10] !== "X"
+        ) {
+          showModal('Primero tachar la Doble antes de tachar la Generala.');
+          return;
+        }
+
+        if (
+          i === 10 &&
+          isGameMatch(reGenerala) &&
+          (game.scores[game.turn - 1][9] !== 50 ||
+            game.scores[game.turn - 1][9] !== 55)
+        ) {
+          showModal('No podés anotar la doble sin antes haber hecho generala');
+          return;
+        }
+
+        if (score === 0) {
+          confirmTacharPuntaje(i);
+        } else {
+          game.scores[game.turn - 1][i] = score;
+          game.scores[game.turn - 1][11] += score;
+          changePlayerTurn();
+        }
+
+        //game.scores[game.turn - 1][i] = score === 0 ? "X" : score;
+        //game.scores[game.turn - 1][11] += score;
         drawScores();
-        changePlayerTurn();
+        //changePlayerTurn();
       }
 
     })
@@ -186,9 +224,10 @@ const drawScores = () => {
   contGames.appendChild(contTotal);
 };
 
+
 function tirarDados() {
   for (let i = 0; i < game.dices.length; i++) {
-    if (game.moves === 1 || game.selectedDices[i]) {
+    if (game.moves === 0 || game.selectedDices[i]) {
       game.dices[i] = Math.floor(Math.random() * 6) + 1;
     }
   }
@@ -203,10 +242,11 @@ function tirarDados() {
   }
 }
 
+
 const changePlayerTurn = () => {
   game.dices = [0, 0, 0, 0, 0];
   game.selectedDices = [false, false, false, false, false];
-  game.moves = 1;
+  game.moves = 0;
   game.turn++;
     if (game.turn > game.players) {
       game.turn = 1;
@@ -217,8 +257,10 @@ const changePlayerTurn = () => {
     }
     btnDados.removeAttribute("disabled");
     drawDices();
+    highlightCurrentPlayer()
     drawState();
 }
+
 
 const gameOver = () => {
   btnDados.setAttribute("disabled", "disabled");
@@ -228,9 +270,10 @@ const gameOver = () => {
     if(game.scores[i][11] > winningScore){
       winningScore = game.scores[i][11];
       winner = i;
+      btnGoBack.disabled = false; 
     }
   }
-  alert(`J${winner} won with ${winningScore} points`);
+  showGameOverModal(`J${winner} won with ${winningScore} points`);
 }
 
 const getGameName = (whichGame) => {
@@ -320,6 +363,102 @@ const drawDiceImages = (contDiv, number) => {
       );
       contDiv.appendChild(img);
     };
+
+  // Modal Alerts generales
+function showModal(message, callback) {
+  const modal = document.getElementById("customModal");
+  const modalMessage = document.getElementById("modalMessage");
+  const okButton = document.getElementById("modalOkBtn");
+
+  modalMessage.innerText = message;
+
+  modal.style.display = "flex";
+
+  const handleOkClick = () => {
+    modal.style.display = "none"; 
+    if (callback) callback(); 
+    okButton.removeEventListener("click", handleOkClick);
+  };
+
+  okButton.addEventListener("click", handleOkClick);
+}
+
+// Modal Game over
+const showGameOverModal = (winner) => {
+  const modal = document.getElementById("gameOverModal");
+  const message = document.getElementById("gameOverMessage");
+  const playAgainBtn = document.getElementById("playAgainBtn");
+  const goToHomeBtn = document.getElementById("goToHomeBtn");
+
+  // Actualiza el mensaje con el ganador
+  message.textContent = winner;
+
+  // Muestra el modal
+  modal.style.display = "flex";
+
+  // Botón de volver a jugar
+  playAgainBtn.onclick = () => {
+    modal.style.display = "none";
+    initGame();
+  };
+
+  // Botón de volver al inicio
+  goToHomeBtn.onclick = () => {
+    modal.style.display = "none";
+    window.location.href = "index.html";
+  };
+};
+
+function highlightCurrentPlayer() {
+  // Remove highlight from all player score headers
+  const scoreHeaders = document.querySelectorAll("#g2 .scores table thead tr th");
+  scoreHeaders.forEach(header => {
+    header.classList.remove("playerTurn");
+  });
+
+  // Add highlight to the current player's score header
+  const currentPlayerHeader = document.querySelector(`#g2 .scores table thead tr th:nth-of-type(${game.turn + 1})`);
+  if (currentPlayerHeader) {
+    currentPlayerHeader.classList.add("playerTurn");
+  }
+}
+
+
+// Modal para confirmar si quiere tachar la jugada
+const confirmTacharPuntaje = (i) => {
+  const modal = document.getElementById("modalConfirmacion");
+  const message = document.getElementById("mensajeModal");
+  const confirmarBtn = document.getElementById("confirmarTachar");
+  const cancelarBtn = document.getElementById("cancelarTachar");
+
+  // Actualizar el mensaje del modal
+ message.textContent = `¿Estás seguro de que deseas tachar el puntaje?`;
+
+  // Mostrar el modal
+  modal.style.display = "flex";
+
+  // Acción al confirmar
+  const confirmar = () => {
+    game.scores[game.turn - 1][i] = "X";
+    drawScores();
+    changePlayerTurn();
+    cerrarModal();
+  };
+
+  // Cerrar modal (al cancelar o confirmar)
+  const cerrarModal = () => {
+    modal.style.display = "none";
+    confirmarBtn.removeEventListener("click", confirmar);
+    cancelarBtn.removeEventListener("click", cerrarModal);
+  };
+
+  // Agregar eventos a los botones
+  confirmarBtn.addEventListener("click", confirmar);
+  cancelarBtn.addEventListener("click", cerrarModal);
+};
+
+
+
 
 btnDados.addEventListener("click", () => {
   tirarDados();
