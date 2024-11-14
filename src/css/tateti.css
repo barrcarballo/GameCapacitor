@@ -1,43 +1,126 @@
-  /* ESTILOS TATETI */
-#g1{
-    display: flex;
+ /* ESTILOS TATETI */
+
+#btn-g1-back {
+  background-color: #ff6f91; /* Color base */
+  margin: 2%;
+  color: white; /* Texto en blanco */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Sin bordes */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+#btn-g1-back:hover {
+  background-color: #ff9472; /* Color más claro al pasar el cursor */
+  transform: scale(1.1); /* Escala el botón ligeramente */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+#btn-g1-back:active {
+  transform: scale(0.95); /* Reduce el tamaño al presionar */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Ajusta la sombra */
+}
+
+#g1 {
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(249, 223, 228);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
-#g1 a{
-    text-decoration: none;
-    color:grey;
-  }
 
-  #g1 #contenedor {
-    display: grid;
-    grid-template-columns: repeat(3,100px);
-    gap: 5px;
-    font-size: 50px;
-    /* justify-content: space-evenly;
-    width: 40%;
-    height: 5% ; */
+#g1 h2 {
+  font-size: 2rem;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#g1 a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#g1 a:hover {
+  background-color: #ff7aa0;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Contenedor del tablero */
+#g1 #contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de las celdas */
+#g1 #contenedor > div {
+  border: 2px solid #f76b8a;
+  border-radius: 12px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a4a4a;
+  background-color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#g1 #contenedor > div:hover {
+  background-color: #ffd1e3;
+  transform: scale(1.1);
+}
+
+/* Celdas deshabilitadas */
+#g1 .disable {
+  background-color: #e0e0e0;
+  pointer-events: none;
+  color: #a1a1a1;
+}
+
+#g1 .disable:hover {
+  cursor: not-allowed;
+}
+
+/* Celdas ganadoras */
+#g1 .winner {
+  background: linear-gradient(135deg, #ff6f91, #ff9472);
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.6);
+  animation: pulse 0.5s infinite;
+}
+
+/* Animación para las celdas ganadoras */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
   }
-  
-  #g1 #contenedor > div{
-    border: 1px solid black;
-    width: 100px;
-    height: 100px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  50% {
+      transform: scale(1.05);
   }
-  #g1 .disable{
-    background-color: #ccc;
-    pointer-events: none;
+  100% {
+      transform: scale(1);
   }
-  #g1 .disable:hover{
-    cursor:not-allowed;
-  }
-  
-  #g1 .winner{
-    background-color: rgb(253, 0, 220);
-    color:white;
-  }
+}

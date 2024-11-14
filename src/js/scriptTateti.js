@@ -60,12 +60,14 @@ function table() {
 
   function habilitarBoton() {
     const reiniciar = document.getElementById("reiniciar");
+
     reiniciar.classList.remove("disable");
     reiniciar.classList.add("reiniciar");
     contador = 0;
     
     reiniciar.addEventListener("click", () => {
       tirarMoneda();
+      button()
     });
   }
   
@@ -73,6 +75,10 @@ function table() {
     turno.innerHTML
   }
   
+  function button() {
+    const btnBack = document.getElementById("btn-g1-back");
+    btnBack.classList.remove("disable");
+  }
 
 //Return te va a devolver el argumento que le asignes.
 

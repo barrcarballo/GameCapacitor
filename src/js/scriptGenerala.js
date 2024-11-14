@@ -454,9 +454,6 @@ const confirmTacharPuntaje = (i) => {
   cancelarBtn.addEventListener("click", cerrarModal);
 };
 
-
-
-
 btnDados.addEventListener("click", () => {
   tirarDados();
 });
