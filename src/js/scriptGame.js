@@ -28,6 +28,7 @@ function initGame() {
   casillas = ["", "", "", "", "", "", "", "", ""];
   table();
   deshabilitarBoton();
+  h2.innerHTML = `TA TE TI`; // Asegúrate de que esta sea la única vez que tocas h2.
 }
 
 function deshabilitarBoton() {
@@ -69,7 +70,7 @@ function table() {
   }
   
   function tirarMoneda() {
-    h2.innerHTML = `Turno de: <span id="turnojugador">${Math.random() > 0.5 ? 'X' : 'O'}</span>`;
+    turno.innerHTML
   }
   
 
@@ -111,6 +112,4 @@ function winner() {
     }
   }
 }
-
-//document.getElementById("reiniciar").addEventListener("click" => initGame())
 document.getElementById("reiniciar").addEventListener("click", () => {initGame()});

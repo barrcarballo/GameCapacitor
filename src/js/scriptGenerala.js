@@ -201,11 +201,8 @@ const drawScores = () => {
           game.scores[game.turn - 1][11] += score;
           changePlayerTurn();
         }
-
-        //game.scores[game.turn - 1][i] = score === 0 ? "X" : score;
-        //game.scores[game.turn - 1][11] += score;
+        
         drawScores();
-        //changePlayerTurn();
       }
 
     })
@@ -257,8 +254,8 @@ const changePlayerTurn = () => {
     }
     btnDados.removeAttribute("disabled");
     drawDices();
-    highlightCurrentPlayer()
     drawState();
+    highlightCurrentPlayer()
 }
 
 
