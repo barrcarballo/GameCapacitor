@@ -8,7 +8,7 @@ let dados;
 
 
 // Dados
-const DICE_SIZE = 75;
+const DICE_SIZE = 65;
 const DOT_RADIUS = 0.1 * DICE_SIZE;
 const AT_QUARTER = 0.25 * DICE_SIZE;
 const AT_HALF = 0.5 * DICE_SIZE;
@@ -31,6 +31,7 @@ const game = {
 };
 
 function initGame() {
+  drawScores.innerHTML = "";
   btnGoBack.disabled = true; // Deshabilita el botón
   game.dices = [0, 0, 0, 0, 0];
   game.selectedDices = [false, false, false, false, false];

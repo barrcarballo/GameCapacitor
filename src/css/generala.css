@@ -371,3 +371,28 @@
         max-width: 80%;
     }
 }
+
+/* Estilo responsivo para vista horizontal */
+@media (max-width: 932px) {
+    #g2 {
+        flex-direction: column; /* Cambia a disposición horizontal */
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    #g2 #contenedorGenerala {
+        flex-direction: row; /* Los dados se distribuyen horizontalmente */
+        gap: 15px;
+    }
+
+    #g2 table {
+        width: 25%; /* Ajusta el ancho de la tabla */
+        margin: 0; /* Elimina márgenes extra */
+        align-self: flex-start; /* Asegura que la tabla se mantenga alineada arriba */
+    }
+
+    #g2 .btn, #btn-g2-back, #btnDados, #playAgainBtn, #goToHomeBtn {
+        margin: 10px auto; /* Centra los botones */
+        width: auto; /* Los botones se adaptan al contenido */
+    }
+}

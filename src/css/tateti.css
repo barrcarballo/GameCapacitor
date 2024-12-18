@@ -1,28 +1,28 @@
  /* ESTILOS TATETI */
 
 #btn-g1-back {
-  background-color: #ff6f91; /* Color base */
+  background-color: #ff6f91; 
   margin: 2%;
-  color: white; /* Texto en blanco */
-  font-size: 16px; /* Tamaño de fuente */
-  font-weight: bold; /* Negrita */
-  padding: 10px 20px; /* Espaciado interno */
-  border: none; /* Sin bordes */
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-  transition: all 0.3s ease; /* Transición suave */
+  color: white; 
+  font-size: 16px; 
+  font-weight: bold; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
 }
 
 #btn-g1-back:hover {
-  background-color: #ff9472; /* Color más claro al pasar el cursor */
-  transform: scale(1.1); /* Escala el botón ligeramente */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  background-color: #ff9472; 
+  transform: scale(1.1); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
 }
 
 #btn-g1-back:active {
-  transform: scale(0.95); /* Reduce el tamaño al presionar */
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Ajusta la sombra */
+  transform: scale(0.95); 
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); 
 }
 
 #g1 {
