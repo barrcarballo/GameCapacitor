@@ -6,7 +6,7 @@
     flex-direction: column;
     background: linear-gradient(135deg, #28a745, #80d97e);
     color: white;
-    padding: 15px;
+    padding: 1em;
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
 }
@@ -14,40 +14,40 @@
 #g2 h1, h2 {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 /* CONTENEDOR DADOS */
 #g2 #contenedorGenerala {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 1em;
+    margin-bottom: 1.5em;
 }
 
 /* DADOS */
 #g2 .dice {
-    width: 80px;
-    height: 80px;
+    width: 5em;
+    height: 5em;
     background-color: white;
-    border-radius: 12px;
+    border-radius: 0.75em;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #g2 .dice:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.25em);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
 #g2 .dice.selected {
-    border: 3px solid #ff6f91;
+    border: 0.2em solid #ff6f91;
     background: #ffe1e8;
-    transform: translateY(-10px) scale(1.1);
+    transform: translateY(-0.625em) scale(1.1);
 }
 
 /* DADOS BLOQUEADOS */
@@ -62,20 +62,20 @@
 #g2 table {
     width: 70%;
     border-collapse: collapse;
-    margin-top: 15px;
-    font-size: 0.9rem;
+    margin-top: 1.5em;
+    font-size: 0.9em;
     font-family: 'Arial', sans-serif;
     color: #444;
     background: #f7f7f7;
-    border-radius: 10px;
+    border-radius: 0.625em;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.2);
 }
 
 #g2 table th, #g2 table td {
-    padding: 12px;
+    padding: 1.2em;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0.1em solid #ddd;
 }
 
 #g2 table th {
@@ -101,10 +101,10 @@
 
 @keyframes glow {
     from {
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+        box-shadow: 0 0 1em rgba(255, 255, 0, 0.5);
     }
     to {
-        box-shadow: 0 0 20px rgba(255, 255, 0, 0.9);
+        box-shadow: 0 0 2em rgba(255, 255, 0, 0.9);
     }
 }
 
@@ -112,51 +112,51 @@
 #g2 .btn {
     background: #ff6f91;
     color: white;
-    padding: 10px 18px;
+    padding: 0.625em 1.125em;
     border: none;
-    border-radius: 25px;
-    font-size: 0.9rem;
+    border-radius: 1.25em;
+    font-size: 0.9em;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 #g2 .btn:hover {
     background: #ff9472;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
 #g2 .btn:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 }
 
 /* BOTÓN "GO BACK" */
 #btn-g2-back {
     background: #4caf50;
     color: white;
-    padding: 12px 20px;
+    padding: 0.75em 1.25em;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
+    border-radius: 1.875em;
+    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    width: 200px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    width: 12.5em;
 }
 
 #btn-g2-back:hover {
     background: #45a049;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
 #btn-g2-back:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos para el botón cuando está deshabilitado */
@@ -178,31 +178,30 @@
     box-shadow: none;
 }
 
-
 /* BOTÓN "TIRAR DADOS" */
 #btnDados {
     background: #ff6f91;
     color: white;
-    padding: 12px 20px;
+    padding: 0.75em 1.25em;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
+    border-radius: 1.875em;
+    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin-top: 10px;
-    width: 200px;
+    margin-top: 1em;
+    width: 12.5em;
 }
 
 #btnDados:hover {
     background: #ff9472;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
 #btnDados:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 }
 
 /* MODALES */
@@ -221,22 +220,22 @@
 
 .modal-content, .modal-content2, .modal-content3 {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 1.25em;
+    border-radius: 0.9375em;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 350px;
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.3);
+    max-width: 21.875em;
     width: 90%;
     animation: slideDown 0.5s ease;
 }
 
 /* MODALES BOTONES */
 .modal-buttons button, #confirmarTachar, #cancelarTachar {
-    margin: 8px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 0.9em;
     border: none;
-    border-radius: 8px;
+    border-radius: 0.5em;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -263,54 +262,54 @@
 #playAgainBtn {
     background: #ff6f91;
     color: white;
-    padding: 12px 20px;
+    padding: 0.75em 1.25em;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
+    border-radius: 1.875em;
+    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    width: 200px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    width: 12.5em;
 }
 
 #playAgainBtn:hover {
     background: #ff9472;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
 #playAgainBtn:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 }
 
 /* BOTÓN "VOLVER AL INICIO" */
 #goToHomeBtn {
     background: #4caf50;
     color: white;
-    padding: 12px 20px;
+    padding: 0.75em 1.25em;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
+    border-radius: 1.875em;
+    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    width: 200px;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    width: 12.5em;
 }
 
 #goToHomeBtn:hover {
     background: #45a049;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.375em 0.75em rgba(0, 0, 0, 0.3);
 }
 
 #goToHomeBtn:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 }
 
 /* ESTILOS PARA BOTONES DESHABILITADOS */

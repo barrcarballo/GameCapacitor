@@ -18,7 +18,7 @@
     <h1>🎮Games🎮</h1>
     <button id="btn-g1">TaTeTi ⭕️❌</button>
     <button id="btn-g2">Generala 🎲</button>
-    <button id="btn-g3"> Simon ♟️</button>
+    <button id="btn-g3"> Simon 🚦</button>
   </div>
   
   <div id="g1" class="game nodisp">
@@ -86,16 +86,34 @@
 <div id="modalConfirmacion" class="modal3">
   <div class="modal-content3">
     <p id="mensajeModal"></p>
-    <button id="confirmarTachar">Sí, Confirmar</button>
-    <button id="cancelarTachar">No, Cancelar</button>
+    <button id="confirmarTachar">Sí</button>
+    <button id="cancelarTachar">No</button>
   </div>
 </div>
 
 
   <div id="g3" class="game nodisp">
-    <h2>Game 3</h2>
-    <p>this is game 3...</p>
     <button id="btn-g3-back">Go back</button>
+    <h2>Simon Says...</h2>
+  <div id="game-board">
+    <div class="color" id="green"></div>
+    <div class="color" id="red"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="blue"></div>
+  </div>
+  <p>Level: <span class="final-level"></span></p>
+  
+  <button id="start-button">Start Game</button>
+
+  <!-- modal game over -->
+  <div id="game-over-modal" class="modal4">
+    <div class="modal-content4">
+      <h2>Game Over!</h2>
+      <p>Llegaste hasta el nivel: <span class="final-level"></span></p>
+      <button id="close-modal">Try Again</button>
+    </div>
+  </div>
+  
   </div>
 
   <script src= "./js/script.js" type="module"></script>
