@@ -30,7 +30,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: url(https://i.pinimg.com/736x/86/8e/49/868e496bd88b8a07fd6e78a5c7d505b8.jpg);
+  background-size: cover;
   height: 100vh;
   font-family: 'Arial', sans-serif;
 }

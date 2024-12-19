@@ -20,7 +20,8 @@ body {
 }
 
 #g3 {
-  background-color: #333;
+  background: url(https://i.pinimg.com/736x/8d/6f/b6/8d6fb6a68fb4ff93efd7820b7f811d06.jpg);
+  background-size: cover;
   color: #f5f7fa;
   padding: 10px 20px;
   border-radius: 5px;

@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(135deg, #28a745, #80d97e);
+    background: url(https://i.pinimg.com/736x/42/a2/c9/42a2c98c7fc09f0893dbed13dc0c6d24.jpg);
+    background-size: cover;
     color: white;
     padding: 15px;
     font-family: 'Arial', sans-serif;
