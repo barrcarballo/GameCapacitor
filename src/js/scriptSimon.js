@@ -3,7 +3,6 @@ let sequence = [];
 let playerSequence = [];
 let level = 0;
 
-// elementos del DOM
 const startButton = document.getElementById("start-button");
 const gameBoard = document.getElementById("game-board");
 const colorElements = colors.map(color => document.getElementById(color));

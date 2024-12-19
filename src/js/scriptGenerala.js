@@ -3,6 +3,7 @@ const max = 6;
 const section = document.getElementById("contenedorGenerala");
 const btnDados = document.getElementById("btnDados");
 const btnGoBack = document.getElementById("btn-g2-back");
+let gameStarted = false; // Variable para verificar si el juego ha comenzado
 let selectedDados;
 let dados;
 
@@ -32,7 +33,7 @@ const game = {
 
 function initGame() {
   drawScores.innerHTML = "";
-  btnGoBack.disabled = true; // Deshabilita el botón
+  btnGoBack.disabled = false; // Deshabilita el botón
   game.dices = [0, 0, 0, 0, 0];
   game.selectedDices = [false, false, false, false, false];
   game.moves = 0;
@@ -224,6 +225,12 @@ const drawScores = () => {
 
 
 function tirarDados() {
+  
+  if (!gameStarted) {
+    btnGoBack.disabled = true;
+    gameStarted = true; // El juego ha comenzado
+  }
+
   for (let i = 0; i < game.dices.length; i++) {
     if (game.moves === 0 || game.selectedDices[i]) {
       game.dices[i] = Math.floor(Math.random() * 6) + 1;

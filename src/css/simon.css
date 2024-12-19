@@ -100,5 +100,36 @@ button:hover {
   background-color: #0056b3;
 }
 
-  
+@media (max-width: 57.1875em) and (max-height: 25.75em) {
+  #g3{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .color {
+    width: 7em; 
+    height: 7em; 
+    border-radius: 0.9375em;
+    cursor: pointer;
+  } 
+
+  #game-board {
+    display: grid;
+    align-self: center;
+    grid-template-columns: repeat(2, 7em); 
+    grid-template-rows: repeat(2, 7em); 
+    margin: auto; 
+    width: 14em; /* Ajustado para que no sobre espacio */
+    height: 14em; /* Ajustado a un valor coherente con el ancho */
+  }
+
+  #start-button, #btn-g3-back{
+    margin: auto;
+  }
+
+  /*#btn-g3-back{
+    margin-right: 0.5em;
+  }*/
+}
   

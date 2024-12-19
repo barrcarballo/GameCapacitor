@@ -37,68 +37,73 @@ function deshabilitarBoton() {
   reiniciar.classList.add("disable");
 }
 
+function deshabilitarBotonRegreso() {
+  const btnBack = document.getElementById("btn-g1-back");
+  btnBack.classList.add("disable");
+}
+
+function habilitarBotonRegreso() {
+  const btnBack = document.getElementById("btn-g1-back");
+  btnBack.classList.remove("disable");
+}
+
 function table() {
-    section.innerHTML = "";
-    for (let i = 0; i < N; i++) {
-      const div = document.createElement("div");
-      div.addEventListener("click", function () {
-        play(i);
-        div.innerHTML = casillas[i];
-        div.classList.add("disable");
-        if (!winner() && contador == N) {
-          h2.innerHTML = "Empate"
-          habilitarBoton();
-        } else if (winner()) {
-            h2.innerHTML = `Ganó: <span id=${turnojugador}"> ${casillas[i]}</span>`;
-          habilitarBoton();
-        }
-      });
-      section.appendChild(div);
-  
-    }
-  }
+  section.innerHTML = "";
+  for (let i = 0; i < N; i++) {
+    const div = document.createElement("div");
+    div.addEventListener("click", function () {
+      play(i);
+      deshabilitarBotonRegreso();
+      div.innerHTML = casillas[i];
+      div.classList.add("disable");
 
-  function habilitarBoton() {
-    const reiniciar = document.getElementById("reiniciar");
-
-    reiniciar.classList.remove("disable");
-    reiniciar.classList.add("reiniciar");
-    contador = 0;
-    
-    reiniciar.addEventListener("click", () => {
-      tirarMoneda();
-      button()
+      if (!winner() && contador == N) {
+        h2.innerHTML = "Empate";
+        habilitarBoton();
+        habilitarBotonRegreso();  // Habilitar el botón de retroceso en empate
+      } else if (winner()) {
+        h2.innerHTML = `Ganó: <span id=${turnojugador}"> ${casillas[i]}</span>`;
+        habilitarBoton();
+        habilitarBotonRegreso();  // Habilitar el botón de retroceso en victoria
+      }
     });
+    section.appendChild(div);
   }
-  
-  function tirarMoneda() {
-    turno.innerHTML
-  }
-  
-  function button() {
-    const btnBack = document.getElementById("btn-g1-back");
-    btnBack.classList.remove("disable");
-  }
+}
 
-//Return te va a devolver el argumento que le asignes.
+function habilitarBoton() {
+  const reiniciar = document.getElementById("reiniciar");
+  reiniciar.classList.remove("disable");
+  reiniciar.classList.add("reiniciar");
+  contador = 0;
+  
+  reiniciar.addEventListener("click", () => {
+    initGame();
+    button();
+  });
+}
+
+function button() {
+  const btnBack = document.getElementById("btn-g1-back");
+  btnBack.classList.remove("disable");
+}
 
 function play(celda) {
-    if(winner()){
-        return;
-      };
-  console.log(turno);
+  if(winner()) {
+    return;
+  }
+  const div = section.children[celda]; // Obtener el div de la casilla
   if (casillas[celda] == "" && turno.innerHTML == "X") {
     casillas[celda] = "X";
-    console.log(casillas);
+    div.style.color = "fuchsia"; // Cambiar el color de "X" a rojo
     turno.innerHTML = "O";
     contador += 1;
   } else if (casillas[celda] == "" && turno.innerHTML == "O") {
     casillas[celda] = "O";
-    console.log(casillas);
+    div.style.color = "blue"; // Cambiar el color de "O" a azul
     turno.innerHTML = "X";
     contador += 1;
   }
-
 }
 
 function winner() {
@@ -108,7 +113,6 @@ function winner() {
     const celda2 = casillas[combinacion[1]];
     const celda3 = casillas[combinacion[2]];
     if (celda1 !== "" && celda1 === celda2 && celda2 === celda3) {
-      
       const cells = section.children;
       cells[combinacion[0]].classList.add("winner");
       cells[combinacion[1]].classList.add("winner");
@@ -118,4 +122,6 @@ function winner() {
     }
   }
 }
-document.getElementById("reiniciar").addEventListener("click", () => {initGame()});
+
+document.getElementById("reiniciar").addEventListener("click", () => { initGame() });
+

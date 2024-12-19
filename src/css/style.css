@@ -8,10 +8,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 62.5em;
+  height: 100vh;
 }
-
-#main {
+#main{
   background-color: #eac7f8;
 }
 
@@ -22,22 +21,27 @@ body {
 #g3 {
   background-color: #333;
   color: #f5f7fa;
-  padding: 0.625em 1.25em;
-  border-radius: 0.3125em; 
+  padding: 10px 20px;
+  border-radius: 5px;
   text-align: center;
   font-size: 1.1em;
   font-weight: bold;
 }
 
-#main, #profile, .game {
+#main, .game {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.25em; 
+  padding: 20px;
   box-sizing: border-box;
+}
+#games{
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
 }
 
 #main {
@@ -48,14 +52,14 @@ body {
   font-size: 3em;
   font-weight: 700;
   color: #333;
-  margin-bottom: 1.25em; 
+  margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.125em; 
+  letter-spacing: 2px;
 }
 
 #main button {
-  width: 12.5em; 
-  height: 12.5em; 
+  width: 300px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,22 +67,49 @@ body {
   color: white;
   text-align: center;
   border: none;
-  border-radius: 0.75em;
+  border-radius: 12px;
   font-size: 2.5em;
-  margin: 0.625em 0; 
+  margin: 10px 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0em 0.25em 0.625em rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #main button:hover {
   background-color: #7300b1;
-  transform: translateY(-0.3125em); 
-  box-shadow: 0em 0.375em 0.9375em rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 #main button:active {
   background-color: #50017b;
   transform: translateY(0);
   box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  #games{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+@media (max-height: 480px) {
+  #main button {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f97ae6;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    font-size: 2.5em;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
 }
