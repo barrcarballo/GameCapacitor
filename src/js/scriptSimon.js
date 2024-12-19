@@ -9,6 +9,7 @@ const colorElements = colors.map(color => document.getElementById(color));
 const modal = document.getElementById("game-over-modal");
 const closeModalButton = document.getElementById("close-modal");
 const finalLevelText = document.querySelector(".final-level");
+const btnGoBack = document.getElementById("btn-g3-back");
 
 
 function startGame() {
@@ -16,12 +17,14 @@ function startGame() {
   playerSequence = [];
   level = 0;
   startButton.disabled = true;
+  btnGoBack.disabled = false;
   closeModal();
   nextRound();
 }
 
 function nextRound() {
   level++;
+  btnGoBack.disabled = true;
   document.querySelectorAll(".final-level").forEach(el => el.textContent = level); // escribe el nivel
   playerSequence = [];
   const nextColor = colors[Math.floor(Math.random() * colors.length)];
@@ -86,7 +89,10 @@ function gameOver() {
 
 
 function closeModal() {
+  document.querySelectorAll(".final-level").forEach(el => el.textContent = 0)
+  btnGoBack.disabled = false;
   modal.style.display = "none";
+  
 }
 
 // Comienza el juego

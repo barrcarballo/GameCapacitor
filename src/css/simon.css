@@ -1,15 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f3f3f3;
-  margin: 0;
-  padding: 0;
+#g3 h2, p{
+  font-family: "Nunito", serif;
 }
-
-h1 {
-  margin-top: 1.25em; 
-}
-
 #game-board {
   display: grid;
   grid-template-columns: repeat(2, 9.375em); 
@@ -47,9 +38,10 @@ h1 {
 }
 
 button {
+  font-family: "Nunito", serif;
   padding: 0.625em 1.25em; 
   font-size: 1em; 
-  background-color: #007bff;
+  background-color: #aa00ff;
   color: white;
   border: none;
   border-radius: 0.3125em;
@@ -57,8 +49,13 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #bd45fa;
 }
+
+button:disabled {
+  background-color: #7f7d7d;
+}
+
 
 /* Modal styles */
 .modal4 {

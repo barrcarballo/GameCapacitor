@@ -1,5 +1,4 @@
 body {
-  font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: #f5f7fa;
@@ -11,7 +10,9 @@ body {
   height: 100vh;
 }
 #main{
-  background-color: #eac7f8;
+  font-family: "Nunito", serif;
+  background: url(https://i.pinimg.com/736x/ea/dd/13/eadd13ffa451ad5e12ad9493242e5e70.jpg);
+  background-size: cover;
 }
 
 .nodisp {
@@ -58,6 +59,7 @@ body {
 }
 
 #main button {
+  font-family: "Nunito", serif;
   width: 300px;
   height: 200px;
   display: flex;
